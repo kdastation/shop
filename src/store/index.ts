@@ -1,15 +1,22 @@
 import { InjectionKey } from "vue";
 import { createStore, Store, useStore as baseUseStore } from "vuex";
-import { counterModule, counterState } from "@/store/modules/counter";
+import {
+  basketModule as basket,
+  BasketModuleState,
+} from "@/store/modules/basket.module";
 
 export interface State {
-  counter: counterState;
+  basket: BasketModuleState;
 }
 
 export const key: InjectionKey<Store<State>> = Symbol();
 
-export const store = createStore<State>({});
-store.registerModule("counter", counterModule);
+export const store = createStore<State>({
+  modules: {
+    basket,
+  },
+});
+
 export function useStore() {
   return baseUseStore(key);
 }

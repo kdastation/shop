@@ -1,22 +1,25 @@
 <template>
-  <div>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem
-    consequuntur, delectus dolores ex laboriosam praesentium voluptatem
-    voluptatibus. Adipisci eius explicabo illo mollitia praesentium rem suscipit
-    ullam! Adipisci, fugiat, rem.
+  <div class="card">
+    <div class="card_name">{{ product.name }}</div>
+    <div class="card_price">{{ product.price }}</div>
+    <button @click="store.commit('basket/addProductInBasket', product)">
+      Добавить в корзину
+    </button>
+    <button @click="store.commit('basket/removeProductFromBasket', product)">
+      Удалить из корзины
+    </button>
   </div>
-  <div @click="store.commit('counter/inc', 2)">+</div>
-  <div>{{ store.getters["counter/count"] }}</div>
-  <button @click="inc2"></button>
 </template>
 
 <script lang="ts" setup>
+import { defineProps } from "vue";
+import { IProduct } from "@/types/models/product";
 import { useStore } from "@/store";
-
+interface CardProps {
+  product: IProduct;
+}
+const props = defineProps<CardProps>();
 const store = useStore();
-const inc2 = () => {
-  store.dispatch("counter/fetch", 2);
-};
 </script>
 
 <style scoped></style>
