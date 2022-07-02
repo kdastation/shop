@@ -1,17 +1,15 @@
 <template>
-  <Cards />
+  <Navigation />
+  <MainProduct />
+  <FeaturedProducts />
+  <TopSellers />
 </template>
 
 <script setup lang="ts">
-import Cards from "@/components/Cards.vue";
+import Navigation from "@/components/Navigation.vue";
+import MainProduct from "@/components/MainProduct.vue";
+import FeaturedProducts from "@/components/FeaturedProducts.vue";
+import TopSellers from "@/components/TopSellers.vue";
 </script>
 
-<style lang="scss">
-* {
-  padding: 0;
-  margin: 0;
-}
-a {
-  text-decoration: none;
-}
-</style>
+<style lang="scss"></style>
