@@ -1,7 +1,7 @@
 <template>
   <button
     :class="[
-      'green_category_button',
+      'category_button',
       {
         active: isActive,
       },
@@ -13,7 +13,7 @@
 
 <script lang="ts" setup>
 import { defineProps } from "vue";
-export interface GreenButtonCategoryProps {
+interface GreenButtonCategoryProps {
   isActive: boolean;
 }
 
@@ -22,17 +22,25 @@ const props = defineProps<GreenButtonCategoryProps>();
 
 <style scoped lang="scss">
 @import "@/styles/variables.scss";
-.green_category_button {
+.category_button {
   font-style: normal;
   font-weight: 600;
   font-size: 1.625rem;
   padding: 1.153em 0.961em;
-  color: #ffffff;
-  background-color: $color_green;
-  border-radius: 60%;
-}
-.active {
   background-color: $color_white;
   color: $color_black;
+  border-radius: 60%;
+  transition: background-color 0.1s linear;
+  &:hover {
+    background-color: darken($color_green, 5);
+    color: darken(#ffffff, 5);
+  }
+}
+.active {
+  color: #ffffff;
+  background-color: $color_green;
+  &:hover {
+    color: darken(#ffffff, 5);
+  }
 }
 </style>

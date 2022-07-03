@@ -1,15 +1,15 @@
 <template>
   <article class="card">
-    <div class="card_box">
+    <div class="card_box" :style="{ backgroundColor: product.color }">
       <img
         class="card_box__image"
-        src="../assets/top-card-image-1.png"
+        :src="require(`../assets/${product.img}`)"
         alt="image"
       />
       <div class="card_box__content">
-        <h6 class="card_box__title">Boat Rockerz 333</h6>
+        <h6 class="card_box__title">{{ product.name }}</h6>
         <div class="card_box__rating"></div>
-        <p class="card_box__price">$20</p>
+        <p class="card_box__price">${{ product.price }}</p>
       </div>
     </div>
     <div class="card__button_wrapper">
@@ -18,7 +18,15 @@
   </article>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import GreenButton from "@/ui-components/GreenButton.vue";
+import { defineProps } from "vue";
+import { IProduct } from "@/types/models/product";
+interface CardProps {
+  product: IProduct;
+}
+const props = defineProps<CardProps>();
+</script>
 
 <style scoped lang="scss">
 @import "@/styles/variables.scss";
@@ -50,9 +58,3 @@
   }
 }
 </style>
-<script>
-import GreenButton from "@/ui-components/GreenButton";
-export default {
-  components: { GreenButton },
-};
-</script>

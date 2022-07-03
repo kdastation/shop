@@ -30,6 +30,9 @@ const props = defineProps<GreenButtonProps>();
   box-shadow: 0 25px 50px rgba(132, 94, 194, 0.15);
   border-radius: 0.476em;
   border: none;
+  &:hover {
+    background-color: darken($color_green, 5);
+  }
 }
 .full_width {
   width: 100%;

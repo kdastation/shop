@@ -1,13 +1,16 @@
 <template>
   <div class="cards">
-    <Card />
-    <Card />
-    <Card />
+    <Card v-for="product in products" :key="product.id" :product="product" />
   </div>
 </template>
 
 <script setup lang="ts">
 import Card from "@/components/Card.vue";
+import { IProduct } from "@/types/models/product";
+export interface CardsProps {
+  products: IProduct[];
+}
+const props = defineProps<CardsProps>();
 </script>
 
 <style scoped lang="scss">
