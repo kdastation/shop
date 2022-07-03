@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Boat Rockerz 333",
+      "price": "20",
+      "img": "top-card-image-1.png",
+      "color": "#ECFEF4",
+      "category": "wireless",
+      "idCategory": 1
+    },
+    {
+      "id": 2,
+      "name": "Boat kerz 234",
+      "price": "40",
+      "img": "top-card-image-2.png",
+      "color": "#E5D5FF",
+      "category": "wireless",
+      "idCategory": 1
+    },
+    {
+      "id": 3,
+      "name": "Boat Rockerz 323",
+      "price": "30",
+      "img": "top-card-image-3.png",
+      "color": "#C9F2FF",
+      "category": "wired",
+      "idCategory": 2
+    }
+  ],
+  "trendingProducts": [
+    {
+      "id": 1,
+      "name": "Boat Rockerz 333",
+      "price": "20",
+      "img": "trending-card-image-1.png",
+      "color": "#E5D5FF",
+      "category": "earbuds",
+      "idCategory": 1
+    },
+    {
+      "id": 2,
+      "name": "Boat kerz 234",
+      "price": "40",
+      "img": "trending-card-image-2.png",
+      "color": "#ECFEF4",
+      "category": "wireless",
+      "idCategory": 3
+    },
+    {
+      "id": 3,
+      "name": "Boat Rockerz 323",
+      "price": "30",
+      "img": "trending-card-image-3.png",
+      "color": "#C9F2FF",
+      "category": "wireless",
+      "idCategory": 3
+    }
+  ]
+}
